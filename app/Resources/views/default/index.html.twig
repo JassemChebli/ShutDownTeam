@@ -1,0 +1,245 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li>
+               <a>{{ app.user.username }} {{ 'layout.logged_in_as'|trans({'%username%': app.user.roles[0]}, 'FOSUserBundle') }}  </a>
+        </li>
+        <li>
+        <a href="{{ path('fos_user_security_logout') }}" class="btn btn-rose btn-round">
+            <i class="material-icons">power_settings_new</i>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+        </li>
+{% else %}
+
+
+    <li class="button-container">
+        <a href="{{ path('fos_user_security_login') }}" class="btn btn-rose btn-round">
+            <i class="material-icons">vpn_key</i> LogIn
+        </a>
+    </li>
+    <li class="button-container">
+        <a href="{{ path('fos_user_registration_register') }}" class="btn btn-primary btn-round">
+            <i class="material-icons">group_add</i> Register
+        </a>
+    </li>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="page-header header-filter clear-filter" data-parallax="true" style="background-image: url({{ asset('img/bg69.jpg') }}); transform: translate3d(0px, 0px, 0px);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="brand">
+                        <h1 style="color: #e91e63;background-color: white;padding: 10px;border-radius: 5px">
+                            Tech<strong style="color: #9c27b0">Events</strong>
+
+                        </h1>
+
+                        <h3 style="text-transform: uppercase" class="title">the ultimate platform for Technological Events</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h4 class="description text-center">Material Kit PRO is a Bootstrap UI Kit with a fresh, new design inspired by Google's Material Design. You asked for it, so we built it. It's a great pleasure to introduce to you the material concepts in an easy to use and beautiful set of components.</h4>
+                    </div>
+                </div>
+
+                <div class="features-1">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-rose">
+                                    <i class="material-icons">apps</i>
+                                </div>
+                                <h4 class="info-title">Huge Number of Components</h4>
+                                <p>Every element that you need in a product comes built in as a component. All components fit perfectly with each other and can take variations in colour.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-info">
+                                    <i class="material-icons">view_day</i>
+                                </div>
+                                <h4 class="info-title">Multi-Purpose Sections</h4>
+                                <p>Putting together a page has never been easier than matching together sections. From team presentation to pricing options, you can easily customise and built your pages.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info">
+                                <div class="icon icon-success">
+                                    <i class="material-icons">view_carousel</i>
+                                </div>
+                                <h4 class="info-title">Example Pages</h4>
+                                <p>If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-components">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3 class="title">Basic Components</h3>
+                        <h6 class="description">The core elements of your website</h6>
+                        <h5 class="description">We re-styled every Bootstrap element to make it resemble Material Design and also fit with each other. All the Bootstrap components that you need in a development have been re-design with the new look. Besides the numerous basic elements, we have also created additional classes. All these items will help you take your project to the next level.
+
+                        </h5>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1">
+                        <div class="image-container">
+                            <img src="{{ asset('img/presentation/components.jpg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section section-cards section-dark">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-7">
+                        <div class="image-container">
+                            <img class="img" src="{{ asset('assets-for-demo/cards-test.png') }}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1">
+                        <div class="section-description">
+                            <h3 class="title">Unconventional Cards</h3>
+                            <h6 class="description">One Card for Every Problem</h6>
+                            <h5 class="description">We love cards and everybody on the web seems to. We have gone above and beyond with options for you to organise your information. From cards designed for blog posts, to product cards or user profiles, you will have many options to choose from. All the cards follow the material principles and have a design that stands out.  </h5>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-content">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="section-description">
+                            <h3 class="title">Content Areas</h3>
+                            <h6 class="description">For Areas that Need More Space</h6>
+                            <h5 class="description">If you need elements such as tables, comments, description areas, tabs and many others, we've got you covered. We took into consideration multiple use cases and came up with some specific elements that you will love to use. They're beautiful and easy to use for the end user navigating your website. </h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 col-md-offset-1">
+                        <div class="image-container">
+                            <img class="img" src="{{ asset('assets-for-demo/content-test.png') }}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!--     *********    END FEATURES 5      *********      -->
+
+
+
+        <!--     *********     FEATURES 5      *********      -->
+
+        <div class="section section-overview">
+            <div class="features-5" style="background-image: url({{ asset('assets-for-demo/features-5.jpg') }})">
+
+
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <h2 class="title">Your work will get much easier</h2>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                            <div class="info">
+                                <div class="icon">
+                                    <i class="material-icons">format_bold</i>
+                                </div>
+                                <h4 class="info-title">Bootstrap Grid</h4>
+                                <p>Enjoy the fluid grid system based on 12 columns. Material Kit PRO is built over Bootstrap and has all the benefits that the framework comes with.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="info">
+                                <div class="icon">
+                                    <i class="material-icons">phonelink</i>
+                                </div>
+                                <h4 class="info-title">Fully Responsive</h4>
+                                <p>This Bootstrap kit is built mobile-first and looks amazing on any device. Regardless of the screen size, the website content will naturally fit the given resolution. </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="info">
+                                <div class="icon">
+                                    <i class="material-icons">access_time</i>
+                                </div>
+                                <h4 class="info-title">Save Time</h4>
+                                <p>Using the Material Kit PRO will save you large amount of time. You don't have to worry about customising the basic Bootstrap design or generating new components.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="info">
+                                <div class="icon">
+                                    <i class="material-icons">attach_money</i>
+                                </div>
+                                <h4 class="info-title">Save Money</h4>
+                                <p>Creating your design from scratch with dedicated designers can be very expensive. Using a kit is the best option to start your development while bootstrapping your budget. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section-testimonials team-3">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <h2 class="title">Trusted by 8.700+ People</h2>
+                            <h5 class="description">The UI Kits, Templates and Dashboards that we've created are used by <b>91,500+ web developers</b> in over <b>142.000 Web Projects</b>. This is what some of them think:</h5>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

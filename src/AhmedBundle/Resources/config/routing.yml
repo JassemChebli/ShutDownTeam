@@ -1,0 +1,9 @@
+ahmed_homepage:
+    path:     /
+    defaults: { _controller: AhmedBundle:Default:index }
+ajout_evenement:
+    path:     /evenement/ajout
+    defaults: { _controller: AhmedBundle:Evenement:ajout }
+liste_evenement:
+    path:     /evenement/liste
+    defaults: { _controller: AhmedBundle:Evenement:liste }

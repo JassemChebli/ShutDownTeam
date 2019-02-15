@@ -1,0 +1,39 @@
+<h3>liste des enseigenants</h3>
+<table border="2">
+    <th>Libelle</th>
+    <th>Nombre de participants</th>
+    <th>Formateur</th>
+    <th>Organisateur</th>
+    <th>Description</th>
+    <th>Prix</th>
+    <th>Image</th>
+    <th>Lien</th>
+    <th>Date debut</th>
+    <th>Date fin</th>
+    <th>Evaluation</th>
+    <th>Premium</th>
+    <th>type</th>
+    <th>theme</th>
+
+
+
+    {% for event in events %}
+        <tr>
+            <td>{{ event.libelle }}</td>
+            <td>{{ event.nbrParticipant }}</td>
+            <td>{{ event.formateur }}</td>
+            <td>{{ event.organisateur }}</td>
+            <td>{{ event.description }}</td>
+            <td>{{ event.prix }}</td>
+            <td>{{ event.image }}</td>
+            <td>{{ event.lien }}</td>
+            <td>{{ event.dateDebut|date }}</td>
+            <td>{{ event.dateFin|date }}</td>
+            <td>{{ event.evaluation }}</td>
+            <td>{{ event.prix }}</td>
+            <td>{{ event.premium }}</td>
+            <td>{{ event.formateur }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
